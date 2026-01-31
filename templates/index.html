@@ -3,7 +3,8 @@
 {% block title %}{{ config.title }} - {{ config.extra.tagline }}{% endblock %}
 
 {% block content %}
-<section class="hero">
+<section class="hero" {% if config.extra.hero_image %}style="background-image: url('{{ get_url(path=config.extra.hero_image) }}')"{% endif %}>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
         <h2>Hand cut nostalgia</h2>
         <p class="artist-statement">{{ config.extra.artist_statement }}</p>

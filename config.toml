@@ -25,3 +25,4 @@ artist_statement = """
 All of the work is made from vintage papers hand cut with love and a need to make sense of whatever we have done to women and animals. I can explain each element (intent and sustainability are kinda my thing). Please contact me if you are interested in wholesale or just want to talk about where I found an opium smoker in a kids book--I live vintage. Thank you so much for supporting me and my process.
 """
 contact_email = "contact@whatnotica.com"  # Update this!
+hero_image = "images/i_m_interested_63.jpg"  # Hero background image on homepage
