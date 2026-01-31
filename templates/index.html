@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }} - {{ config.extra.tagline }}{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h2>Hand cut nostalgia</h2>
+        <p class="artist-statement">{{ config.extra.artist_statement }}</p>
+        <a href="{{ get_url(path='products') }}" class="cta-button">View the Collection</a>
+    </div>
+</section>
+
+<section class="featured-products">
+    <h2>Featured Work</h2>
+    <div class="product-grid">
+        {% set products = get_section(path="products/_index.md") %}
+        {% for product in products.pages | slice(end=8) %}
+        <a href="{{ product.permalink }}" class="product-card">
+            {% if product.extra.image %}
+            <img src="{{ get_url(path=product.extra.image) }}" 
+                 alt="{{ product.title }}" 
+                 loading="lazy">
+            {% endif %}
+            <div class="product-info">
+                <h3>{{ product.title }}</h3>
+                {% if product.extra.price %}
+                <span class="price">{{ product.extra.price }}</span>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    <a href="{{ get_url(path='products') }}" class="view-all">View all work →</a>
+</section>
+{% endblock %}

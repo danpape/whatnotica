@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <meta name="description" content="{{ config.description }}">
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="{{ get_url(path='/') }}" class="site-title">
+                <h1>Whatnotica</h1>
+                <span class="tagline">{{ config.extra.tagline }}</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="{{ get_url(path='/') }}">Home</a></li>
+                <li><a href="{{ get_url(path='products') }}">Catalog</a></li>
+                <li><a href="mailto:{{ config.extra.contact_email }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; {{ now() | date(format="%Y") }} Whatnotica. All rights reserved.</p>
+        <p class="contact-note">
+            Interested in a piece? <a href="mailto:{{ config.extra.contact_email }}">Email me</a> to arrange purchase.
+        </p>
+    </footer>
+</body>
+</html>

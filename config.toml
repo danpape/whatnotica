@@ -1,0 +1,31 @@
+# Whatnotica - Zola Configuration
+# https://www.getzola.org/documentation/getting-started/configuration/
+
+base_url = "https://www.whatnotica.com"
+title = "Whatnotica"
+description = "Propaganda Reimagined - Hand cut vintage paper collage art"
+default_language = "en"
+
+# Enable compilation of Sass files
+compile_sass = true
+
+# Generate feed (RSS)
+generate_feeds = false
+
+# Syntax highlighting (not needed for this site)
+highlight_code = false
+
+# Build options
+minify_html = true
+
+[markdown]
+# Allow HTML in markdown files
+unsafe = false
+
+[extra]
+# Custom variables available in templates
+tagline = "Propaganda Reimagined"
+artist_statement = """
+All of the work is made from vintage papers hand cut with love and a need to make sense of whatever we have done to women and animals. I can explain each element (intent and sustainability are kinda my thing). Please contact me if you are interested in wholesale or just want to talk about where I found an opium smoker in a kids book--I live vintage. Thank you so much for supporting me and my process.
+"""
+contact_email = "contact@whatnotica.com"  # Update this!

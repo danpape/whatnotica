@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock %}
+
+{% block content %}
+<article class="product-detail">
+    <div class="product-layout">
+        {% if page.extra.image %}
+        <div class="product-image">
+            <img src="{{ get_url(path=page.extra.image) }}" 
+                 alt="{{ page.title }}">
+        </div>
+        {% endif %}
+        
+        <div class="product-content">
+            <h1>{{ page.title }}</h1>
+            
+            {% if page.extra.price %}
+            <p class="price">{{ page.extra.price }}</p>
+            {% endif %}
+            
+            <div class="description">
+                {{ page.content | safe }}
+            </div>
+            
+            <div class="purchase-info">
+                <p>Interested in this piece?</p>
+                <a href="mailto:{{ config.extra.contact_email }}?subject=Inquiry about: {{ page.title }}" 
+                   class="contact-button">
+                    Contact me to arrange purchase
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <nav class="product-nav">
+        <a href="{{ get_url(path='products') }}">&larr; Back to catalog</a>
+    </nav>
+</article>
+{% endblock %}

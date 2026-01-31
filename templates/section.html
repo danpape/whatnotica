@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Catalog - {{ config.title }}{% endblock %}
+
+{% block content %}
+<section class="catalog">
+    <h2>All Work</h2>
+    <p class="section-intro">{{ config.extra.artist_statement }}</p>
+    
+    <div class="product-grid">
+        {% for product in section.pages %}
+        <a href="{{ product.permalink }}" class="product-card">
+            {% if product.extra.image %}
+            <img src="{{ get_url(path=product.extra.image) }}" 
+                 alt="{{ product.title }}" 
+                 loading="lazy">
+            {% endif %}
+            <div class="product-info">
+                <h3>{{ product.title }}</h3>
+                {% if product.extra.price %}
+                <span class="price">{{ product.extra.price }}</span>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
