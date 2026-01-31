@@ -12,15 +12,11 @@ compile_sass = true
 # Generate feed (RSS)
 generate_feeds = false
 
-# Syntax highlighting (not needed for this site)
-highlight_code = false
-
 # Build options
 minify_html = true
 
 [markdown]
-# Allow HTML in markdown files
-unsafe = false
+# Markdown configuration
 
 [extra]
 # Custom variables available in templates

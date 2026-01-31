@@ -137,8 +137,11 @@ def create_product_markdown(product):
         download_image(image_url, image_filename)
     
     # Generate markdown content
+    # Escape quotes in title for TOML format                         
+    escaped_title = title.replace('"', '\\"')                       
+
     markdown = f'''+++
-title = "{title.replace('"', '\\"')}"
+title = "{escaped_title}"
 date = 2024-01-01
 
 [extra]
