@@ -32,10 +32,10 @@ echo "Build complete! Output in 'public/' directory."
 echo ""
 
 # If using git for deployment, uncomment these lines:
-# echo "Deploying to GitHub..."
-# git add -A
-# git commit -m "Update site $(date '+%Y-%m-%d %H:%M')"
-# git push
+echo "Deploying to GitHub..."
+git add -A
+git commit -m "Update site $(date '+%Y-%m-%d %H:%M')"
+git push
 
 echo "Done!"
 echo ""
