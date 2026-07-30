@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(zola --version:*)",
+      "WebFetch(domain:www.whatnotica.com)"
+    ]
+  }
+}
